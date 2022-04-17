@@ -177,7 +177,7 @@ footer .icon li{
 /* 首頁 */
 /* 進版圖 */
 .wrapper{
-    background-image: url(/img/index_big.jpg);
+    background-image: url(../img/index_big.jpg);
     background-repeat: no-repeat;
     background-position: center;
     width: 1440px;
@@ -261,12 +261,12 @@ footer .icon li{
     color: black;
 }
 .con1{
-    background-image: url(/img/index_m1.jpg);
+    background-image: url(../img/index_m1.jpg);
     margin-right: 20px;
 }
 
 .con2{
-    background-image: url(/img/index_m2.jpg);
+    background-image: url(../img/index_m2.jpg);
 }
 
 /* 列表 */
@@ -325,11 +325,11 @@ footer .icon li{
     padding-top: 150px;
 }
 
-.pic1{background-image: url(/img/index_img1.jpg);}
+.pic1{background-image: url(../img/index_img1.jpg);}
 
-.pic2{background-image: url(/img/index_img2.jpg);}
+.pic2{background-image: url(../img/index_img2.jpg);}
 
-.pic3{background-image: url(/img/index_img3.jpg);}
+.pic3{background-image: url(../img/index_img3.jpg);}
 
 /* 介紹頁 */
 .d_main{
