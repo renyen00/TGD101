@@ -29,6 +29,10 @@ header{
     height: 90px;
     display: flex;
     box-sizing: border-box;
+    /* 固定 */
+    width: 1366px;
+    margin: 0 auto;
+    /* 固定 */
 }
 
 .logo{
@@ -94,6 +98,11 @@ footer{
     height: 270px;
     padding: 30px 37px 20px;
     box-sizing: border-box;
+
+    /* 固定寬 */
+    width: 1366px;
+    margin: 0 auto;
+    /* 固定寬 */
 }
 footer a{
     color:white;
@@ -180,13 +189,13 @@ footer .icon li{
     background-image: url(../img/index_big.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 1440px;
+    width: 1366px;
     margin: 0 auto;
-    height: 800px;
+    height: 600px;
 }
 
 .wrapper article{
-    padding: 320px 37px;
+    padding: 240px 37px;
     box-sizing: border-box;
 }
 
