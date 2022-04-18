@@ -30,8 +30,8 @@ header{
     display: flex;
     box-sizing: border-box;
     /* 固定 */
-    width: 1366px;
-    margin: 0 auto;
+    /* width: 1366px;
+    margin: 0 auto; */
     /* 固定 */
 }
 
@@ -100,8 +100,8 @@ footer{
     box-sizing: border-box;
 
     /* 固定寬 */
-    width: 1366px;
-    margin: 0 auto;
+    /* width: 1366px;
+    margin: 0 auto; */
     /* 固定寬 */
 }
 footer a{
