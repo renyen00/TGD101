@@ -1,0 +1,56 @@
+
+/* 關於 */
+/* 左邊 */
+.a_main{
+    margin-left: 95px;
+    margin-top: 50px;
+    display: flex;
+}
+.a_left img{
+    height: 560px;
+}
+/* 右邊 */
+.a_right{
+    width: 33%;
+    margin-left: 50px;
+}
+.a_right h3{
+    font-size: 24px;
+    margin: 50px 0;
+    color: #A88787;
+}
+.a_right p{
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* 右下圖片 */
+.a_pic{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+    margin-bottom: 0px;
+}
+/* 地點 */
+.place{
+    width: 1000px;
+    margin: 50px auto;
+}
+.place img{
+    display: block;
+}
+.place_p{
+    height: 300px;
+    display: flex;
+}
+.place_p p{
+    font-size: 18px;
+    display: block;
+    width: 500px;
+    padding: 30px;
+    margin-top: 100px;
+    box-sizing: border-box;
+}
+iframe{
+    height: 300px;
+    width: 500px;
+}

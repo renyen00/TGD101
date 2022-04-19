@@ -1,0 +1,59 @@
+
+
+/* 介紹頁 */
+.d_main{
+    width: 1220px;
+    margin: 0 auto;
+}
+.d_main_t{
+    display: flex;
+    flex-wrap: wrap;
+}
+.d_main_t img{
+    margin-bottom: 30px;
+}
+.d_main_t img:first-child{
+    width: 590px;
+}
+.d_t_img{
+    margin-right: 30px;
+}
+.d_main_t img:last-child{
+    width: 590px;
+}
+/* 下半 */
+.d_down{
+    display: flex;
+    width: 1220px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1400px;
+}
+
+.d_down img{
+    width: 590px;
+}
+.d_down img:first-child{
+    margin-right: 30px;
+}
+.d_down article{
+    width: 590px;
+    padding: 30px;
+    margin: 40px 0;
+    box-sizing: border-box;
+}
+
+.d_down h2{
+    font-size: 24px;
+    color: #A88787;
+    line-height: 2;
+    font-weight: bold;
+}
+.d_down p{
+    font-size: 14px;
+    line-height: 1.6;
+}
+.d_down .d_text{
+    margin-bottom: 110px;
+}

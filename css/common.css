@@ -1,0 +1,252 @@
+@import url(reset.css);
+
+/* 共用 */
+body{
+    background-color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.icon ul{
+    display: inline-flex;
+}
+
+.icon li a{
+    display: block;
+    width: 24px;
+    overflow: hidden;
+}
+.icon li img{}
+button:hover{cursor: pointer}
+
+/* header */
+header{
+    height: 90px;
+    display: flex;
+    box-sizing: border-box;
+    /* 固定 */
+    width: 1366px;
+    margin: 0 auto;
+    /* 固定 */
+}
+
+.logo{
+    padding-top: 20px;
+    padding-left: 37px;
+    flex-grow: 2;
+}
+.logo img{
+    max-width: 100%;
+}
+
+header>nav{
+    flex-grow: 4;
+    margin: 0 auto;
+}
+
+header>nav ul{
+    justify-content: flex-end;
+    display: flex;
+}
+
+header>nav a{
+    display: block;
+    text-align: center;
+    font-size: 24 px;
+    height: 90px;
+    line-height: 90px;
+    width: 100px;
+    margin: 0 25px;
+    flex-grow: 1;
+    color: black;
+}
+header>nav a:hover{
+    background-color: black;
+    color:#fff
+}
+
+header .icon{
+    padding-right: 37px;
+    height: 90px;
+    line-height: 90px;
+}
+
+header .icon a{
+    margin: 5px 6px 0;
+}
+.t_i_1{}
+
+.t_i_2{
+    transform: translateX(-34px);
+}
+
+.t_i_3{
+    transform: translateX(-68px);
+}
+
+/* 中間共用標題 */
+
+
+.p_main{
+    width: 1366px;
+    margin: 0 auto;
+    /* background-color: #999; */
+}
+.p_main>article {
+    padding-top: 70px;
+}
+.p_main article>ul p{
+    color:#999;
+    font-size: 15px; 
+}
+.p_main article>ul a{
+   color: #999;
+   font-size: 15px;
+}
+.p_main>article>ul>li:first-child>a{
+    margin-left: 105px;
+}
+.p_main>article>ul{
+    display: flex;
+}
+.p_main>article>ul>li:last-child a{
+color: #222;
+}
+/* 標題 */
+.p_main article div{
+    margin: 10px 95px 0;
+    padding: 10px;
+    background-color: black;
+    box-sizing: border-box;
+    height: 58px;
+}
+.p_main>article h2{
+    color: white;
+    width: 180px;
+    line-height: 1.6;
+    border-bottom: 1px solid white;
+    font-weight:bold ;
+    font-size: 24px;
+}
+
+.p_main nav>h3{
+    width: 100px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #A88787;
+
+}
+.p_main nav button{
+    padding-left: 20px;
+    border: none;
+    background-color:transparent ;
+    font-size: 18px;
+    line-height: 2;
+}
+/* 主要區塊 */
+.pro{
+    display: flex;
+    margin-left: 105px;
+    margin-top: 50px;
+}
+
+/* footer */
+
+footer{
+    background-color: black;
+    color:white;
+    font-size: 14px;
+    height: 270px;
+    padding: 30px 37px 20px;
+    box-sizing: border-box;
+
+    /* 固定寬 */
+    /* width: 1366px;
+    margin: 0 auto; */
+    /* 固定寬 */
+}
+footer a{
+    color:white;
+}
+footer article{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer nav>p{
+    margin-bottom: 15px;
+}
+
+footer ul{
+    line-height: 1.6;
+}
+
+footer ul li{}
+footer ul li a{}
+
+footer input{
+    border: none;
+    border-bottom:1px solid white;
+    background-color: transparent;
+    color: white;
+    margin-top: 15px;
+    
+
+}
+footer .ipt{
+    margin-left: -16px;
+}
+
+.input{}
+/* 底部 */
+.f_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+/* 聲明 */
+.f_{
+    margin-top: 70px;
+    font-size: 12px;
+    position: relative;
+    flex-grow: 8;    
+}
+
+.f_ p{}
+
+.f_ a{
+    text-decoration: underline;
+    position: absolute;
+}
+.f_a1{
+    top:11px;
+    left: 60px;
+}
+.f_a2{
+    top:11px;
+    left: 105px;
+}
+/* icon */
+footer .icon{
+    margin-top: 70px;
+}
+footer .icon li{
+    margin-left: 12px;
+}
+
+.f_i_1{}
+
+.f_i_2{
+    transform: translateX(-36px);
+}
+
+.f_i_3{
+    transform: translateX(-70px);
+}

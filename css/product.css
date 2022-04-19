@@ -1,0 +1,172 @@
+/* 產品頁 */
+/* 右邊 */
+
+.p_main{
+    background-image: url(../img/Bgimg.jpg);
+}
+.p_select{
+    margin-top: 50px;
+    margin-right: 95px;
+    margin-bottom: 50px;
+    text-align: right;
+}
+.p_select select{
+    width: 90px;
+    height: 30px;
+}
+.p_select::before{
+    content: '排序:';
+    margin-right: 10px;
+    font-size: 18px;
+    height: 30px;
+}
+.p_main>nav{
+    margin: 50px 0 0 105px;
+    float: left;
+}
+/* 卡片列表 */
+
+.p_card{
+    width: 1045px;
+    margin-left: 225px;
+    
+}
+
+.p_card ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 70px;
+}
+.p_card li{
+    box-sizing: border-box;
+    margin-bottom: 100px;
+}
+.p_card img{
+    max-width: 300px;
+    display: block;
+}
+.p_card p{
+    display: block;
+    height: 130px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    line-height: 2;
+    font-size: 14px;
+    border: #999 solid 1px;
+}
+/* 換頁按鈕 */
+.p_page{
+    padding: 20px;
+}
+.p_page ul{
+    display: flex;
+    justify-content: center;
+}
+.p_page li{
+    margin: 0 15px;
+}
+
+.p_page a{
+    display: block;
+    color:black;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.p_page li:first-child a{
+    background-color: black;
+    color: #fff;
+}
+
+
+/* 詳細頁 */
+.all_main{
+    background-image: none;
+}
+/* 目錄右邊 */
+.p_right main{
+    margin-left: 90px;
+}
+.p_right .p_top{
+    display: flex;
+}
+.p_c_left{}
+.p_c_left img{
+    height: 500px;
+    border: 1px solid black;
+}
+/* 右邊的右邊 */
+.p_c_right{
+    width: 40%;
+    box-sizing: border-box;
+    margin-left: 28px;
+}
+.p_c_right h2{
+    margin: 50px 0;
+    font-size: 24px;
+    font-weight: bold;
+    }
+.p_c_right p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+/* price */
+.p_c_right h3{
+    font-size: 24px;
+    font-weight: bold;
+    height: 90px;
+    line-height: 90px;
+    border-top: 1px solid #b4b4b4;
+    border-bottom: 1px solid #b4b4b4;
+}
+/* 按鈕 */
+.p_c_right ul{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.p_c_right button{
+    display: block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid black;
+    font-size: 14px;
+}
+.p_c_right button:hover{
+    background-color: #000;
+    color: #fff;
+}
+/* 底下 */
+.p_right h3{
+    font-size: 20px;
+    margin: 50px 0 40px;
+}
+.p_right>main article ul{
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    overflow: hidden;
+}
+.p_right>main article li{
+    border: 1px solid #b4b4b4;
+    margin: 20px 10px;
+}
+.p_right>main article li:first-child{
+    margin-left: 0;
+}
+.p_right>main article li img{
+    display: block;
+    height: 200px;
+}

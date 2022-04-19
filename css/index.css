@@ -1,0 +1,157 @@
+
+/* 首頁 */
+/* 進版圖 */
+.wrapper{
+    background-image: url(../img/index_big.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1366px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.wrapper article{
+    padding: 240px 37px;
+    box-sizing: border-box;
+}
+
+.wrapper h2{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.wra_btn{}
+
+.wra_btn ul{
+    display: flex;
+
+}
+
+.wra_btn ul li{}
+.wra_btn ul li a{
+    display: block;
+    width: 280px;
+    height: 50px;
+    border: 3px solid white;
+    text-align: center;
+    line-height: 45px;
+    font-size: 24px;
+    color: white;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+.wra_btn ul li a:hover{
+    background-color: #fff;
+    color: black;
+}
+
+/* 第二層 */
+.main{
+    width: 1366px;
+    margin: 0 auto;    
+}
+
+.main article{
+    display: flex;
+}
+
+.main article div{
+    width: 673px;
+    height: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.main h2{
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 1px black;
+}
+
+.main article a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border:2px solid white ;
+    color: #fff;
+}
+.main article a:hover{
+    background-color: #fff;
+    color: black;
+}
+.con1{
+    background-image: url(../img/index_m1.jpg);
+    margin-right: 20px;
+}
+
+.con2{
+    background-image: url(../img/index_m2.jpg);
+}
+
+/* 列表 */
+.cardlist{
+    margin: 20px auto ;
+}
+
+.cardlist ul{
+    display: flex;
+    overflow: hidden;
+}
+
+.cardlist li{
+    margin-right: 10px;
+}
+
+.cardlist li a{}
+
+.cardlist li img{
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+.cardlist li p{
+    color: black;
+    height: 100px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 2;
+}
+/* 圖 */
+.piclink{
+    margin: 0 auto 20px;
+}
+
+.piclink ul{
+    display: flex;
+
+}
+
+.piclink ul li{
+    margin: 0 auto;
+}
+
+.piclink a{
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+
+.piclink p{
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 0 1px black;
+    padding-top: 150px;
+}
+
+.pic1{background-image: url(../img/index_img1.jpg);}
+
+.pic2{background-image: url(../img/index_img2.jpg);}
+
+.pic3{background-image: url(../img/index_img3.jpg);}
