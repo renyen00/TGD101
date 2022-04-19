@@ -485,11 +485,12 @@ color: #222;
     justify-content: space-between;
 }
 .p_card li{
+    box-sizing: border-box;
     border: #999 solid 1px;
     margin-bottom: 100px;
 }
 .p_card img{
-    max-width: 315px;
+    max-width: 313px;
     display: block;
 }
 .p_card p{
