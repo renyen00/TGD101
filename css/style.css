@@ -403,11 +403,22 @@ footer .icon li{
 .p_main>article {
     padding-top: 70px;
 }
-
-.p_main>article a{
-    color:#555;
-    font-size: 15px;
+.p_main article>ul p{
+    color:#999;
+    font-size: 15px; 
+}
+.p_main article>ul a{
+   color: #999;
+   font-size: 15px;
+}
+.p_main>article>ul>li:first-child>a{
     margin-left: 105px;
+}
+.p_main>article>ul{
+    display: flex;
+}
+.p_main>article>ul>li:last-child a{
+color: #222;
 }
 /* 標題 */
 .p_main article div{
