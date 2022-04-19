@@ -397,7 +397,7 @@ footer .icon li{
 .p_main{
     width: 1366px;
     margin: 0 auto;
-    background-image: url(/img/Bgimg.jpg);
+    background-image: url(../img/Bgimg.jpg);
     /* background-color: #999; */
 }
 .p_main>article {
