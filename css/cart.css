@@ -14,10 +14,12 @@
 .c_list li{
     display: flex;
     height: 100px;
-    background-color: #222;
+    background-color: white;
     padding: 10px 20px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    /* border: #000 1px solid; */
+    box-shadow: 1px 1.5px #999;
 }
 .c_list img{
     height: 80px;
@@ -26,9 +28,9 @@
     line-height: 80px;
     margin-left: 20px;
     font-size: 14px;
-    font-weight: bold;
+    /* font-weight: bold; */
     flex-grow: 1;
-    color: #fff;
+    /* color: #fff; */
 }
 /* 列表右邊按鈕 */
 .c_btn{
@@ -40,15 +42,16 @@
 .c_btn button{
     border: none;
     background-color: transparent;
-    color: white;
+    /* color: white; */
     font-weight: bold;
+    font-size: 14px;
 }
 /* 最右邊排列 */
 .c_list li div:last-child{
     margin-top: 33px;
     margin-left: 20px;
     text-align: right;
-    color: #fff;
+    /* color: #fff; */
     font-size: 14px;
 }
 .c_list li div:last-child button{
@@ -65,10 +68,11 @@
     border-top: 1px solid #666;
     width: 95%;
     margin: 20px auto;
-}
-.c_text{
     font-size: 14px;
     padding: 20px 0;
+}
+.c_text .price{
+    font-size: 18px;
     }
     /* 結帳按鈕 */
 .c_check{

@@ -117,6 +117,7 @@
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 50px;
+    height: 90px;
 }
 /* price */
 .p_c_right h3{
@@ -127,13 +128,39 @@
     border-top: 1px solid #b4b4b4;
     border-bottom: 1px solid #b4b4b4;
 }
-/* 按鈕 */
+/* 樣式 */
 .p_c_right ul{
-    margin-top: 120px;
+    margin-top: 43px;
     display: flex;
     justify-content: space-between;
 }
-.p_c_right button{
+.p_c_right .style{
+    justify-content: flex-start;
+}
+.style button{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border:1px solid #000;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+.style .red{
+    background-color: rgb(218, 72, 72);
+}
+.style .yellow{
+    background-color: rgb(255, 218, 123);
+}
+.style .purple{
+    background-color: rgb(141, 95, 226);
+}
+.p_c_right ul .choose{
+    border:2px solid #000;
+}
+/* 按鈕 */
+
+.p_c_right ul:last-child button{
     display: block;
     width: 180px;
     height: 40px;
@@ -144,7 +171,7 @@
     border: 1px solid black;
     font-size: 14px;
 }
-.p_c_right button:hover{
+.p_c_right ul:last-child button:hover{
     background-color: #000;
     color: #fff;
 }
