@@ -137,21 +137,28 @@
 }
 
 .piclink a{
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 400px;
     height: 400px;
 }
 
 .piclink p{
-    text-align: center;
+    align-self: center;
     font-size: 40px;
     color: #fff;
     text-shadow: 0 0 1px black;
-    padding-top: 150px;
+    
 }
 
-.pic1{background-image: url(../img/index_img1.jpg);}
+.pic1{
+    background-image: url(../img/index_img1.jpg);
+}
 
-.pic2{background-image: url(../img/index_img2.jpg);}
+.pic2{
+    background-image: url(../img/index_img2.jpg);
+}
 
-.pic3{background-image: url(../img/index_img3.jpg);}
+.pic3{
+    background-image: url(../img/index_img3.jpg);
+}

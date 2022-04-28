@@ -6,7 +6,7 @@
 }
 .p_select{
     margin-top: 50px;
-    margin-right: 95px;
+    margin-right: 5%;
     margin-bottom: 50px;
     text-align: right;
 }
@@ -21,14 +21,17 @@
     height: 30px;
 }
 .p_main>nav{
-    margin: 50px 0 0 105px;
+    margin: 50px 0 0 calc(5% + 10px);
+    /* margin-left: calc(5% + 10px); */
     float: left;
 }
 /* 卡片列表 */
 
 .p_card{
-    width: 1045px;
-    margin-left: 225px;
+    /* width: 1045px; */
+    margin-right: 5%;
+    margin-left: 20%;
+    /* width: 100%; */
     
 }
 
@@ -36,29 +39,46 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 70px;
 }
 .p_card li{
     box-sizing: border-box;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
+    position: relative;
 }
 .p_card img{
     max-width: 300px;
     display: block;
 }
 .p_card p{
-    display: block;
-    height: 130px;
-    padding: 30px;
+    
+    height: 100px;
+    padding:10px 30px;
     box-sizing: border-box;
     background-color: #fff;
     line-height: 2;
     font-size: 14px;
     border: #999 solid 1px;
+    color: #000;
+    /* display: block; */
+}
+/* 購物車按紐 */
+.p_card button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 40%;
+    height: 10%;
+    transition: .5s;
+}
+.p_card button:hover{
+    color: yellow;
 }
 /* 換頁按鈕 */
 .p_page{
-    padding: 20px;
+    padding: 30px;
 }
 .p_page ul{
     display: flex;
@@ -80,7 +100,7 @@
     border: 1px solid black;
     box-sizing: border-box;
 }
-.p_page li:first-child a{
+.p_page li .nowpage{
     background-color: black;
     color: #fff;
 }
@@ -153,10 +173,10 @@
     background-color: rgb(255, 218, 123);
 }
 .style .purple{
-    background-color: rgb(141, 95, 226);
+    background-color: rgb(204, 95, 226);
 }
 .p_c_right ul .choose{
-    border:2px solid #000;
+    border:3px solid #000;
 }
 /* 按鈕 */
 

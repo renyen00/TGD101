@@ -94,7 +94,8 @@ header .icon a{
 
 
 .p_main{
-    width: 1366px;
+    /* width: 1366px; */
+    width: 90%;
     margin: 0 auto;
     /* background-color: #999; */
 }
@@ -109,8 +110,9 @@ header .icon a{
    color: #999;
    font-size: 15px;
 }
-.p_main>article>ul>li:first-child>a{
-    margin-left: 105px;
+.p_main>article>ul>li:first-child{
+    margin-left: 5%;
+    padding-left: 10px;
 }
 .p_main>article>ul{
     display: flex;
@@ -120,11 +122,12 @@ color: #222;
 }
 /* 標題 */
 .p_main article div{
-    margin: 10px 95px 0;
+    margin: 10px auto 0;
     padding: 10px;
     background-color: black;
     box-sizing: border-box;
     height: 58px;
+    width: 90%;
 }
 .p_main>article h2{
     color: white;
@@ -153,8 +156,14 @@ color: #222;
 /* 主要區塊 */
 .pro{
     display: flex;
-    margin-left: 105px;
+    margin-left: 5%;
     margin-top: 50px;
+    justify-content: space-between;
+    width: 90%;
+}
+.pro>nav{
+    margin-left: 10px;
+    width: 20%;
 }
 
 /* footer */
@@ -168,8 +177,8 @@ footer{
     box-sizing: border-box;
 
     /* 固定寬 */
-    /* width: 1366px;
-    margin: 0 auto; */
+    width: 1366px;
+    margin: 0 auto;
     /* 固定寬 */
 }
 footer a{
@@ -241,12 +250,20 @@ footer .icon li{
     margin-left: 12px;
 }
 
-.f_i_1{}
-
-.f_i_2{
-    transform: translateX(-36px);
+.icon i{
+    font-size: 24px;
+    transition: all 0.5s;
 }
 
-.f_i_3{
-    transform: translateX(-70px);
+.icon .fa-instagram:hover{
+    /* 文字漸層 */
+    background: linear-gradient(170deg, #3344f2 20%,#b5299f 40%, #f52263 50%,#fe8d26 80%);
+        -webkit-background-clip: text;
+        color: transparent;
+}
+.icon .fa-facebook-square:hover{
+    color:#385c98;
+}
+.icon .fa-twitter:hover{
+    color:#29aae3;
 }

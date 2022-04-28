@@ -2,8 +2,11 @@
 /* 關於 */
 /* 左邊 */
 .a_main{
-    margin-left: 95px;
+    /* margin-left: 95px;
     margin-top: 50px;
+    margin-bottom: 30px; */
+    width: 90%;
+    margin: 50px auto 30px;
     display: flex;
 }
 .a_left img{

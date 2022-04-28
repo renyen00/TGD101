@@ -1,8 +1,9 @@
 
 /* 消息 */
 .news_right{
-    margin-left: 180px;
+    /* margin-right: 5%; */
     width: 70%;
+    flex-grow: 1;
 }
 .news_right li{
     margin-bottom: 30px;
@@ -12,6 +13,7 @@
     /* border: 1px solid black; */
     color: #000;
     position: relative;
+    /* margin-right: 4px; */
 }
 /* 文字 */
 .news_right>p{
@@ -53,7 +55,7 @@
     top: 0;
     z-index: 2;
 
-    /* display: none; */
+    display: none;
 }
 .news_jump{
     margin: 10% auto 0;
@@ -79,7 +81,7 @@
 }
 
 .news_jump>article hgroup h2{
-    color: #000;
+    color: #A88787;
     width: 90%;
     font-size: 24px;
     margin-left: 10%;
@@ -129,4 +131,6 @@ hgroup span:hover{
     font-size: 12px;
     font-weight: bold;
     padding: 5px;
+    border: none;
+    background-color: #fff;
 }
