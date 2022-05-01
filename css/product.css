@@ -4,11 +4,13 @@
 .p_main{
     background-image: url(../img/Bgimg.jpg);
 }
+
 .p_select{
     margin-top: 50px;
     margin-right: 5%;
     margin-bottom: 50px;
     text-align: right;
+    /* width: 100%; */
 }
 .p_select select{
     width: 90px;
@@ -28,25 +30,43 @@
 /* 卡片列表 */
 
 .p_card{
-    /* width: 1045px; */
+    
     margin-right: 5%;
     margin-left: 20%;
-    /* width: 100%; */
-    
+    /* width: 50%; */   
 }
 
 .p_card ul{
+    /* float:right; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
+    /* border: #000 1px solid; */
 }
 .p_card li{
     box-sizing: border-box;
-    margin-bottom: 150px;
+    margin:0 0 150px 30px;
     position: relative;
+    width: calc((100% - 90px) / 3);
+    min-width: 180px;
+}
+@media screen and (max-width:767.98px ){
+    .p_card{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .p_card li{
+        margin-left: 30px;
+        width: calc((100% - 60px) / 2);
+    }
+}
+@media screen and (max-width:535.98px ){
+    .p_card li{
+        width: 80%;
+    }
 }
 .p_card img{
-    max-width: 300px;
+    max-width: 100%;
     display: block;
 }
 .p_card p{
@@ -72,9 +92,16 @@
     width: 40%;
     height: 10%;
     transition: .5s;
+    min-width: 80px;
+}
+@media screen and (max-width:767.98px ){
+    .p_card button{
+        width: 100%;
+        height: 7%;
+    }
 }
 .p_card button:hover{
-    color: yellow;
+    font-size: 18px;
 }
 /* 換頁按鈕 */
 .p_page{
@@ -100,7 +127,7 @@
     border: 1px solid black;
     box-sizing: border-box;
 }
-.p_page li .nowpage{
+.p_page li .here{
     background-color: black;
     color: #fff;
 }
@@ -111,22 +138,35 @@
     background-image: none;
 }
 /* 目錄右邊 */
-.p_right main{
-    margin-left: 90px;
+.p_right{
+    float: right;
+    width: 80%;
+    min-width: 320px;
+    /* border: #000 1px solid; */
 }
 .p_right .p_top{
     display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
 }
-.p_c_left{}
+.p_c_left{
+    max-width:500px;
+}
 .p_c_left img{
-    height: 500px;
+    width: 100%;
     border: 1px solid black;
 }
 /* 右邊的右邊 */
 .p_c_right{
     width: 40%;
+    min-width: 320px;
     box-sizing: border-box;
-    margin-left: 28px;
+    margin-left: 30px;
+    }
+@media screen and (max-width:767.98px){
+    .p_c_right{
+        margin: 0;
+    }
 }
 .p_c_right h2{
     margin: 50px 0;
@@ -149,8 +189,13 @@
     border-bottom: 1px solid #b4b4b4;
 }
 /* 樣式 */
+.how{
+    display: flex;
+    justify-content: space-between;
+    margin: 42px 0;
+}
 .p_c_right ul{
-    margin-top: 43px;
+    
     display: flex;
     justify-content: space-between;
 }
@@ -178,11 +223,24 @@
 .p_c_right ul .choose{
     border:3px solid #000;
 }
+/* 數量 */
+.c_btn{
+    display: flex;
+}
+.c_btn button{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+   }
+.c_btn input{
+    width: 50px;
+}
 /* 按鈕 */
 
 .p_c_right ul:last-child button{
     display: block;
-    width: 180px;
+    width: 150px;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -190,10 +248,14 @@
     background-color: #fff;
     border: 1px solid black;
     font-size: 14px;
+    transition: .5s;
 }
-.p_c_right ul:last-child button:hover{
+.p_c_right ul:last-child li:first-child button{
     background-color: #000;
     color: #fff;
+}
+.p_c_right ul:last-child button:hover{
+    letter-spacing: 5px;
 }
 /* 底下 */
 .p_right h3{

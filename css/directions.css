@@ -2,7 +2,8 @@
 
 /* 介紹頁 */
 .d_main{
-    width: 1220px;
+    max-width: 1220px;
+    width: 90%;
     margin: 0 auto;
 }
 .d_main_t{
@@ -10,37 +11,41 @@
     flex-wrap: wrap;
 }
 .d_main_t img{
+    max-width: 280px;
+    width: calc((100% - 30px) / 2);
     margin-bottom: 30px;
 }
 .d_main_t img:first-child{
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
 }
 .d_t_img{
     margin-right: 30px;
 }
 .d_main_t img:last-child{
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
 }
 /* 下半 */
 .d_down{
     display: flex;
-    width: 1220px;
+    max-width: 1220px;
     margin-bottom: 30px;
-    flex-direction: column;
     flex-wrap: wrap;
-    height: 1400px;
+    /* max-height: 1400px; */
 }
 
 .d_down img{
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
 }
 .d_down img:first-child{
-    margin-right: 30px;
 }
 .d_down article{
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
     padding: 30px;
-    margin: 40px 0;
+    margin-bottom: 50px;
     box-sizing: border-box;
 }
 
@@ -54,6 +59,65 @@
     font-size: 14px;
     line-height: 1.6;
 }
-.d_down .d_text{
-    margin-bottom: 110px;
+
+@media screen and (min-width:1312px){
+    .d_down article{
+        margin: 80px 0;
+    }
+    .d_down img:first-child{
+        order: 0;
+    }
+    .d_down article:nth-child(2){
+        order: 1;
+    }
+    .d_down img:nth-child(3){
+        order:3
+    }
+    .d_down article:nth-child(4){
+        order:2;
+        margin-right: 30px;
+    }
+    .d_down img:nth-child(5){
+        order:4;
+    }
+    .d_down article:nth-child(6){
+        order:5;
+    }
+    .d_down img:nth-child(7){
+        order:7;
+    }
+    .d_down article:nth-child(8){
+        order:6;
+        margin-right: 30px;
+    }
+}
+@media screen and (min-width:650px) and (max-width:1311.98px){
+    .d_down{
+        width: 590px;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1344.98px){
+    .d_main_t{
+        width: 930px;
+        margin: 0 auto;
+    }
+    .d_main_t img:nth-child(3){
+        margin-right: 340px;
+    }
+}
+@media screen and (max-width:999.98px){
+    .d_main_t{
+        max-width: 590px;
+        margin: 0 auto;
+    }
+    .d_main_t img:nth-child(5){
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:767.98px){
+    .d_down article{
+        padding: 20px;
+        margin-bottom: 50px;
+    }   
 }

@@ -5,7 +5,7 @@
     background-image: url(../img/index_big.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 1366px;
+    max-width: 1366px;
     margin: 0 auto;
     height: 600px;
 }
@@ -13,6 +13,7 @@
 .wrapper article{
     padding: 240px 37px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .wrapper h2{
@@ -26,10 +27,14 @@
 
 .wra_btn ul{
     display: flex;
-
+    flex-wrap: wrap;
 }
 
 .wra_btn ul li{}
+.wra_btn ul li:first-child a{
+    color: #000;
+    background-color: #fff;
+}
 .wra_btn ul li a{
     display: block;
     width: 280px;
@@ -41,15 +46,18 @@
     color: white;
     margin-right: 15px;
     box-sizing: border-box;
+    transition: .5s;
+    margin-top: 10px;
 }
+
 .wra_btn ul li a:hover{
-    background-color: #fff;
-    color: black;
+    letter-spacing: 10px;
+
 }
 
 /* 第二層 */
 .main{
-    width: 1366px;
+    max-width: 1366px;
     margin: 0 auto;    
 }
 
@@ -58,7 +66,7 @@
 }
 
 .main article div{
-    width: 673px;
+    width: calc((100% - 20px) / 2);
     height: 250px;
     padding: 20px;
     box-sizing: border-box;
@@ -80,10 +88,13 @@
     text-align: center;
     border:2px solid white ;
     color: #fff;
+    transition: 0.5s;
 }
+
 .main article a:hover{
     background-color: #fff;
     color: black;
+    /* letter-spacing: 5px; */
 }
 .con1{
     background-image: url(../img/index_m1.jpg);
@@ -121,44 +132,79 @@
     text-align: center;
     font-size: 14px;
     line-height: 2;
+    
 }
 /* 圖 */
 .piclink{
     margin: 0 auto 20px;
+    
 }
 
 .piclink ul{
     display: flex;
-
 }
 
-.piclink ul li{
+.piclink li{
     margin: 0 auto;
+    flex-grow: 1;
+    transition: .5s;
 }
+@media screen and (max-width:767.98px) {
 
+    .piclink li:hover{
+    flex-grow: 3;
+    }
+}
 .piclink a{
     display: flex;
     justify-content: center;
-    width: 400px;
+    max-width: 400px;
     height: 400px;
+    background-position: center;
+    
+    transition: .5s;
 }
 
 .piclink p{
-    align-self: center;
-    font-size: 40px;
+    font-size: 30px;
     color: #fff;
     text-shadow: 0 0 1px black;
-    
+    opacity: .3;
+    transition: .5s;
+}
+.piclink li:hover p{
+    opacity: 1;
+    transform: translateY(45%);
 }
 
 .pic1{
+    background-image: url(../img/index_down1.jpg);
+}
+.pic1:hover{
     background-image: url(../img/index_img1.jpg);
 }
 
 .pic2{
+    background-image: url(../img/index_down2.jpg);
+}
+.pic2:hover{
     background-image: url(../img/index_img2.jpg);
 }
-
 .pic3{
+    background-image: url(../img/index_down3.jpg);
+}
+.pic3:hover{
     background-image: url(../img/index_img3.jpg);
+}
+
+@media screen and (max-width:414.98px){
+    .wrapper{
+        background-position:55% 0;
+    }
+    .main article a{
+        width: 100px;
+    }
+    .wra_btn ul li a{
+        width: 240px;
+    }
 }
