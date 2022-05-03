@@ -196,7 +196,12 @@
 .pic3:hover{
     background-image: url(../img/index_img3.jpg);
 }
-
+.load{display: none;}
+@media screen and (max-width:900.98px){
+    .wra_btn{
+        max-width: 300px;
+    }
+}
 @media screen and (max-width:414.98px){
     .wrapper{
         background-position:55% 0;

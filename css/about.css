@@ -70,6 +70,13 @@
     flex-grow: 1;
     margin: 0 5px;
 }
+.place_in p{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    /* border: 1px firebrick solid; */
+
+}
 .placeitem1{
     background-image: url(../img/place01.jpg);
 }
@@ -87,6 +94,9 @@
 } */
 .place_in .p_now{
     flex-grow: 5;
+}
+.place_in .p_now p{
+    background-color: transparent;
 }
 
 

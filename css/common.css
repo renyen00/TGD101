@@ -342,3 +342,21 @@ footer .icon li{
         box-sizing: content-box;
     }
 }
+@media screen and (max-width:414.98px ){
+    footer{
+        height: 100%;
+    }
+    footer article{
+        display: block;
+        text-align: center;
+     }
+     footer>article>nav{margin-bottom: 10px;}
+    footer>article>nav>ul{
+        height: 0;
+        overflow: hidden;
+    }
+    footer>article>nav>.-on{
+        height: 100%;
+        overflow: hidden;
+    }
+}
