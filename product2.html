@@ -187,7 +187,8 @@
 
 
     <script>
-        
+        // 點樣式按鈕換圖片
+        /*  失敗ㄌ==
         // document.addEventListener('click', function(e){
             
         //     let style_btns = document.getElementsByClassName('style_btn');        
@@ -200,6 +201,7 @@
         //         }
         //     }
         // })
+        */
         let style_btn =document.getElementsByClassName('style_btn');
 
         for(let i = 0; i < style_btn.length; i++){
@@ -207,21 +209,45 @@
                 // style_btn.classList.remove('choose');
                 for(let i = 0; i < style_btn.length; i++){
                     style_btn[i].classList.remove('choose');
-                }
+                };
             //  ↓ == style_btn[i]
                 this.classList.add('choose');
                 
                 let pic = document.getElementsByClassName('p_c_left')[0].children[0];
                 // console.log(pic);
                 pic.src =`./img/product0${i + 1}.jpg`;
-            })
-        }
+            });
+        };
 
 
         // $('.style_btn').click(function(){
         //     $('.style_btn').removeClass('choose')
         //     $(this).addClass('choose')
         // })
+
+        //---------------數量-------------------- 
+        let count = document.getElementsByClassName('count');
+
+        for(let i = 0; i < count.length; i++){
+            count[i].addEventListener('click',function(){
+
+                let many = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0];
+                console.log(many.value);
+                // if(many.value == ''){
+                //     many.value = 0;
+                // }
+
+                if(i === 0 ){
+                    many.value -= 1;
+                }else{
+                    many.value++;
+                }
+
+                if(many.value < 0){
+                    many.value = 0;
+                }
+            });
+        };
     </script>
 </body>
 </html>
