@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/product.css">
+    <script src="./js/jquery-3.6.0.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -78,10 +79,10 @@
                             <h3>NT$ 107,200</h3>
                             <div class="how">
                                 <ul class="style">
-                                    <li><button class="choose"></button></li>
-                                    <li><button class="red"></button></li>
-                                    <li><button class="yellow"></button></li>
-                                    <li><button class="purple"></button></li>
+                                    <li><button class="style_btn choose"></button></li>
+                                    <li><button class="style_btn red"></button></li>
+                                    <li><button class="style_btn yellow"></button></li>
+                                    <li><button class="style_btn purple"></button></li>
                                 </ul>
                                 <div class="c_btn">
                                     <button class="count"> - </button>
@@ -164,15 +165,15 @@
         <!-- P -->
         <div class="f_bottom">
             <div class="f_">
-                <div class="f_">
-                    <p>本網站為緯育TibaMe前端設計工程師班第74期學員專題作品，本平台僅供學習、展示之用。
-                        <br>若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
-                        <br>參考資源:
-                    </p>
-                    <a href="https://www.pinterest.com/" class="f_a1">pinterest</a>
-                    <a href="https://www.pexels.com/zh-tw/search/stone/" class="f_a2">pexels</a>
-                    
-                    </div>
+                <p>本網站為緯育TibaMe前端設計工程師班第74期學員專題作品，本平台僅供學習、展示之用。
+                    <br>若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
+                    <br>參考資源:
+                </p>
+                <a href="https://www.pinterest.com/" class="f_a1">pinterest</a>
+                <a href="https://www.pexels.com/zh-tw/search/stone/" class="f_a2">pexels</a>
+                
+            </div>
+               
             <div class="icon">
                 <ul>
                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
@@ -183,5 +184,44 @@
         </div>
 
     </footer>
+
+
+    <script>
+        
+        // document.addEventListener('click', function(e){
+            
+        //     let style_btns = document.getElementsByClassName('style_btn');        
+
+        //     if(e.target.classList.contains('style_btn')){
+                
+        //         for(let i = 0; i < style_btns.length; i++){
+        //         let btn = document.getElementsByClassName('style_btn')[i];
+        //         console.log([i]);
+        //         }
+        //     }
+        // })
+        let style_btn =document.getElementsByClassName('style_btn');
+
+        for(let i = 0; i < style_btn.length; i++){
+            style_btn[i].addEventListener('click',function(){
+                // style_btn.classList.remove('choose');
+                for(let i = 0; i < style_btn.length; i++){
+                    style_btn[i].classList.remove('choose');
+                }
+            //  ↓ == style_btn[i]
+                this.classList.add('choose');
+                
+                let pic = document.getElementsByClassName('p_c_left')[0].children[0];
+                // console.log(pic);
+                pic.src =`./img/product0${i + 1}.jpg`;
+            })
+        }
+
+
+        // $('.style_btn').click(function(){
+        //     $('.style_btn').removeClass('choose')
+        //     $(this).addClass('choose')
+        // })
+    </script>
 </body>
 </html>
