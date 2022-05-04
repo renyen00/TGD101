@@ -122,14 +122,8 @@
                 <p>服務資訊</p>
                 <ul>
                     <li><a href="#">聯絡我們</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">訂單查詢</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">退貨</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">常見問題</a></li>
                 </ul>
             </nav>
@@ -137,26 +131,20 @@
                 <p>服務資訊</p>
                 <ul>
                     <li><a href="#">聯絡我們</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">常見問題</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">訂單查詢</a></li>
                 </ul>
+                
             </nav>
             <nav>
                 <p>法律條款</p>
                 <ul>
                     <li><a href="#">隱私政策</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">Cookie政策</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">銷售條款</a></li>
                 </ul>
             </nav>
+        
         
             <!-- 輸入 -->
             <div class="input">
@@ -186,5 +174,21 @@
         </div>
 
     </footer>
+    <script src="./js/index.js"></script>
+    <script>
+        //  rwd h3按鈕縮合
+
+        let h3 = document.getElementsByClassName('p_main')[0].querySelector('h3');
+        h3.addEventListener('click',function(){
+            let filter = h3.closest('nav').querySelector('ul');
+            
+            if(filter.classList.contains('-on')){
+                filter.style.height = '0';
+            }else{
+                filter.style.height = '52px';
+            }
+            filter.classList.toggle('-on');
+        });
+    </script>
 </body>
 </html>

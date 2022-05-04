@@ -115,6 +115,14 @@ header .icon a{
     /* .logo{
         max-width: 268px;
     } */
+    header{
+        position: fixed;
+        background-color: #fff;
+        width: 100%;
+        top: 0;
+        z-index: 5;
+    }
+    
     .bars{
         display: inline-block;
         
@@ -124,7 +132,19 @@ header .icon a{
         
     } 
     header>nav ul{
-        display: none;
+        position: fixed;
+        z-index: 5;
+        right: -70%;
+        top: 90px;
+        display: block;
+        background-color: rgba(255,255,255,.9);
+        width: 60%;
+        height: calc(100vh - 90px);
+
+        transition: .5s;
+    }
+    header>nav ul.-on{
+        right: 0;
     }
 }
 @media screen and (max-width:414px ) {
@@ -194,6 +214,9 @@ color: #222;
     line-height: 2;
 }
 @media screen and (max-width:767.98px ) {
+    .p_main{
+        margin-top: 90px;
+    }
     div.p_main>nav{
         margin: 0 0 0 5%;
         width: 90%;
@@ -201,6 +224,12 @@ color: #222;
     }
     div.pro>nav{
         margin: 0;
+    }
+    .p_main nav>ul{
+        transition: .5s;
+
+        height: 0;
+        overflow: hidden;
     }
     .p_main nav>h3{
         width: 100%;
@@ -215,8 +244,6 @@ color: #222;
     }
     .p_main nav button{
         width: 100%;
-        border: #999 1px solid;
-        display: none;
         font-size: 12px;
     }
 }
@@ -350,13 +377,17 @@ footer .icon li{
         display: block;
         text-align: center;
      }
-     footer>article>nav{margin-bottom: 10px;}
+    footer>article>nav{
+        margin-bottom: 20px;
+        
+    }
     footer>article>nav>ul{
+        font-size: 12px;
         height: 0;
         overflow: hidden;
+        transition: 0.5s;
     }
     footer>article>nav>.-on{
-        height: 100%;
-        overflow: hidden;
+        height: 76.75px;
     }
 }

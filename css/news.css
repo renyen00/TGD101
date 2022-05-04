@@ -146,3 +146,6 @@ hgroup span:hover{
     border: none;
     background-color: #fff;
 }
+div.jumpon{
+    display: block;
+}

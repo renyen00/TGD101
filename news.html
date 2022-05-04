@@ -106,19 +106,19 @@
     </div>
 
     <!-- 內容彈窗 -->
-    <div class="jump">
-        <div class="news_jump">
+    <div class="jump close">
+        <div class="news_jump stop">
             <article>
                 <img src="./img/news_2.jpg" alt="">
                 <hgroup>
-                    <span>x</span>
+                    <span class="close">x</span>
                     <p>2022-03-31</p>
                     <h2>4/1神秘贈品特別活動</h2>
                 </hgroup>
             </article>
             <p>響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。<br><br>響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。</p>
         </div>
-        <ul>
+        <ul class="stop">
             <li><button>上一篇</button></li>
             <!-- <li><button>關閉</button></li> -->
             <li><button>下一篇</button></li>
@@ -132,14 +132,8 @@
                 <p>服務資訊</p>
                 <ul>
                     <li><a href="#">聯絡我們</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">訂單查詢</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">退貨</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">常見問題</a></li>
                 </ul>
             </nav>
@@ -147,23 +141,16 @@
                 <p>服務資訊</p>
                 <ul>
                     <li><a href="#">聯絡我們</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">常見問題</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">訂單查詢</a></li>
                 </ul>
+                
             </nav>
             <nav>
                 <p>法律條款</p>
                 <ul>
                     <li><a href="#">隱私政策</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">Cookie政策</a></li>
-                </ul>
-                <ul>
                     <li><a href="#">銷售條款</a></li>
                 </ul>
             </nav>
@@ -196,5 +183,50 @@
         </div>
 
     </footer>
+
+    <script src="./js/index.js"></script>
+    <script>
+        let jump = document.getElementsByClassName('jump')[0];
+        let abtn = document.getElementsByClassName('news_right')[0].querySelectorAll('a');
+        
+        for(let i = 0;i < abtn.length; i++){
+            abtn[i].addEventListener('click',function(e){
+                e.preventDefault();
+                jump.classList.add('jumpon');
+            })
+        }
+        
+        document.getElementsByClassName('close')[0].onclick = close;
+        document.getElementsByClassName('close')[1].onclick = close;
+
+        let stop1 = document.getElementsByClassName('stop')[0];
+        let stop2 =document.getElementsByClassName('stop')[1];
+        
+        stop1.addEventListener('click',function(e){
+            e.stopPropagation();
+        })
+        stop2.addEventListener('click',function(e){
+            e.stopPropagation();
+        })
+        
+        function close(){
+            jump.classList.remove('jumpon');
+        }
+        
+        //  rwd h3按鈕縮合
+
+        let h3 = document.getElementsByClassName('p_main')[0].querySelector('h3');
+        h3.addEventListener('click',function(){
+            let filter = h3.closest('nav').querySelector('ul');
+            
+            if(filter.classList.contains('-on')){
+                filter.style.height = '0';
+            }else{
+                filter.style.height = '52px';
+            }
+            filter.classList.toggle('-on');
+        });
+
+    </script>
 </body>
 <!-- </html> -->

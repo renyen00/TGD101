@@ -186,5 +186,26 @@
         </div>
 
     </footer>
+
+    <script src="./js/index.js"></script>
+    <script>
+        
+        let place_in = document.getElementsByClassName('place_in')[0].querySelectorAll('li');
+        let place_p = document.getElementsByClassName('place_p');
+
+        for(let i = 0; i < place_in.length ; i++ ){
+            place_in[i].addEventListener('mouseover',function(){
+                for(let i = 0; i < place_in.length ; i++ ){
+                    place_in[i].classList.remove('p_now');
+                    place_p[i].classList.remove('mapon');
+                };
+                this.classList.add('p_now');
+                // console.log(this);
+                place_p[i].classList.add('mapon');
+            });
+        };
+
+    </script>
+
 </body>
 </html>
