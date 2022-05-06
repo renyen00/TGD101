@@ -96,6 +96,7 @@ header .icon{
     padding-right: 5%;
     height: 90px;
     line-height: 90px;
+    position: relative;
 }
 
 header .icon a{
@@ -109,6 +110,19 @@ header .icon a{
 
 .t_i_3{
     transform: translateX(-68px);
+    
+}
+.cart_count{
+    position: absolute;
+    top: 20px;
+    left: 95px;
+    color: white;
+    background-color: brown;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
 }
 
 @media screen and (max-width:767.98px ) {

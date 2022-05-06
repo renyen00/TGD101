@@ -36,7 +36,7 @@
                 <ul>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_1"></a></li>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_2"></a></li>
-                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"></a></li>
+                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"><p class="cart_count">0</p></a></li>
                 </ul>
             </nav>
         </div>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <ul>
-                                <li><button>放入購物車</button></li>
+                                <li><button class="cart_btn">放入購物車</button></li>
                                 <li><button>查看門市存貨</button></li>
                             </ul>
                         </div>
@@ -158,9 +158,9 @@
             </div>
             <div class="icon">
                 <ul>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_1"></a></li>
+                    <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_2"></a></li>
+                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"><p class="cart_count">0</p></a></li>
                 </ul>
             </div>
         </div>
@@ -180,6 +180,60 @@
                 filter.style.height = '52px';
             }
             filter.classList.toggle('-on');
+        });
+        //---------------數量-------------------- 
+        let count = document.getElementsByClassName('count');
+
+        for(let i = 0; i < count.length; i++){
+            count[i].addEventListener('click',function(){
+
+                let many = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0];
+
+                if(i === 0 ){
+                    many.value -= 1;
+                }else{
+                    many.value++;
+                }
+                // 按了就是至少1
+                if(many.value < 1){
+                    many.value = 1;
+                }
+            });
+        };
+        // ==================丟進購物車========================
+        let cart_btn = document.getElementsByClassName('cart_btn')[0];
+        
+        cart_btn.addEventListener('click',function(){
+            let item = document.getElementsByClassName('p_c_right')[0];
+            let item_h2 = item.querySelector('h2').innerText;
+            let item_price = item.querySelector('h3').innerText.slice(4).replace(/\D/,'');
+            let item_count = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0].value;
+
+            // 空著也當作1
+            if(item_count === ''){
+                item_count = 1;
+            }
+            let item_pic = document.getElementsByClassName('p_c_left')[0].querySelector('img').src;
+            // console.log(item_pic);
+            
+
+            let item_id = Date.now();
+            let list = {
+                'item_id':item_id,
+                'name': item_h2,
+                'price': item_price,
+                'count' : item_count,
+                'pic': item_pic
+            }
+            let lists = JSON.parse(sessionStorage.getItem('lists'));
+            if(lists){
+                lists.unshift(list);
+            }else{
+                lists = [list];
+            }
+            sessionStorage.setItem('lists',JSON.stringify(lists));
+            
+            change();
         });
     </script>
 </body>

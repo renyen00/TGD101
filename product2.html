@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_1"></a></li>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_2"></a></li>
-                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"></a></li>
+                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"><p class="cart_count">0</p></a></li>
                 </ul>
             </nav>
         </div>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <ul>
-                                <li><button>放入購物車</button></li>
+                                <li><button class='cart_btn'>放入購物車</button></li>
                                 <li><button>查看門市存貨</button></li>
                             </ul>
                         </div>
@@ -175,21 +175,22 @@
 
     <script src="./js/index.js"></script>
     <script>
-        // 點樣式按鈕換圖片
+        // ====================點樣式按鈕換圖片=======================
         /*  失敗ㄌ==
-        // document.addEventListener('click', function(e){
+        document.addEventListener('click', function(e){
             
-        //     let style_btns = document.getElementsByClassName('style_btn');        
+            let style_btns = document.getElementsByClassName('style_btn');        
 
-        //     if(e.target.classList.contains('style_btn')){
+            if(e.target.classList.contains('style_btn')){
                 
-        //         for(let i = 0; i < style_btns.length; i++){
-        //         let btn = document.getElementsByClassName('style_btn')[i];
-        //         console.log([i]);
-        //         }
-        //     }
-        // })
+                for(let i = 0; i < style_btns.length; i++){
+                let btn = document.getElementsByClassName('style_btn')[i];
+                console.log([i]);
+                }
+            }
+        })
         */
+
         let style_btn =document.getElementsByClassName('style_btn');
 
         for(let i = 0; i < style_btn.length; i++){
@@ -207,7 +208,7 @@
             });
         };
 
-
+        //    jQ三行解決==
         // $('.style_btn').click(function(){
         //     $('.style_btn').removeClass('choose')
         //     $(this).addClass('choose')
@@ -220,7 +221,7 @@
             count[i].addEventListener('click',function(){
 
                 let many = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0];
-                console.log(many.value);
+                // console.log(many.value);
                 // if(many.value == ''){
                 //     many.value = 0;
                 // }
@@ -230,14 +231,14 @@
                 }else{
                     many.value++;
                 }
-
-                if(many.value < 0){
-                    many.value = 0;
+                // 按了就是至少1
+                if(many.value < 1){
+                    many.value = 1;
                 }
             });
         };
 
-        //  rwd h3按鈕縮合
+        //  ================rwd h3按鈕縮合===================
 
         let h3 = document.getElementsByClassName('p_main')[0].querySelector('h3');
         h3.addEventListener('click',function(){
@@ -249,6 +250,42 @@
                 filter.style.height = '52px';
             }
             filter.classList.toggle('-on');
+        });
+        // ==================丟進購物車========================
+        let cart_btn = document.getElementsByClassName('cart_btn')[0];
+
+        cart_btn.addEventListener('click',function(){
+            let item = document.getElementsByClassName('p_c_right')[0];
+            let item_h2 = item.querySelector('h2').innerText;
+            let item_price = item.querySelector('h3').innerText.slice(4).replace(/\D/,'');
+            let item_count = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0].value;
+
+            // 空著也當作1
+            if(item_count === ''){
+                item_count = 1;
+            }
+            let item_pic = document.getElementsByClassName('p_c_left')[0].querySelector('img').src;
+            // console.log(item_pic);
+            
+
+            let item_id = Date.now();
+            let list = {
+                'item_id':item_id,
+                'name': item_h2,
+                'price': item_price,
+                'count' : item_count,
+                'pic': item_pic
+            }
+            let lists = JSON.parse(sessionStorage.getItem('lists'));
+            if(lists){
+                lists.unshift(list);
+            }else{
+                lists = [list];
+            }
+            sessionStorage.setItem('lists',JSON.stringify(lists));
+            
+            change();
+            
         });
     </script>
 </body>

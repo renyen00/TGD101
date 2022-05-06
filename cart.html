@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/cart.css">
+    <script src="./js/jquery-3.6.0.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -36,7 +37,7 @@
                 <ul>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_1"></a></li>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_2"></a></li>
-                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"></a></li>
+                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"><p class="cart_count">0</p></a></li>
                 </ul>
             </nav>
         </div>
@@ -58,7 +59,7 @@
         <main class="c_main">
             <div class="c_left">
                 <ul class="c_list">
-                    <li>
+                    <!-- <li>
                         <div class="c_pic">
                             <img src="./img/jewel_.jpg" alt="">
                         </div>
@@ -73,25 +74,11 @@
                             <button>移除</button>
                         </div>
                     </li>
-                    <li>
-                        <div class="c_pic">
-                            <img src="./img/jewel02.jpg" alt="">
-                        </div>
-                        <h4>品名</h4>
-                        <div class="c_btn">
-                            <button> - </button>
-                            <input type="text" placeholder="數量">
-                            <button>+</button>
-                        </div>
-                        <div>
-                            <p>NT$ 00,000</p>
-                            <button>移除</button>
-                        </div>
-                    </li>
+                     -->
                 </ul>
                 <div class="c_text">
                     <p>總計</p>
-                    <p class="price">NT$ 00,000</p>
+                    <p class="total">NT$ 00,000</p>
                 </div>
                 <ul class="c_check">
                     <li><a href="productlist.html">繼續選購</a></li>
@@ -166,8 +153,172 @@
                 </ul>
             </div>
         </div>
-
+        
     </footer>
     <script src="./js/index.js"></script>
+    <script>
+        $(function(){
+            get_item();
+        });
+        
+        function get_item(){
+            let lists =JSON.parse(sessionStorage.getItem('lists'));
+            // 抓清單
+            if(lists){
+                let total = document.querySelector('.total');
+                
+                
+                let li ='';
+                lists.forEach(function(item,i){
+                    let price =''+ item.price * item.count;
+                    let total_price = price;
+                    
+                    // console.log(price.length);
+                    
+                    price = thousandths(price);
+
+
+                    li = `<li data-id='${item.item_id}'>
+                        <div class="c_pic">
+                            <img src="${item.pic}" alt="">
+                            </div>
+                            <h4>${item.name}</h4>
+                            <div class="c_btn">
+                                <button class='minus'> - </button>
+                                <input class='many' type="text" onkeyup = "value=value.replace(/[^0123456789]/g,'')" placeholder="數量" value=${item.count} >
+                                <button class='plus'>+</button>
+                                </div>
+                        <div>
+                        <p data-price='${total_price}'>NT$ ${price}</p>
+                        <button class='remove'>移除</button>
+                        </div>
+                        </li>`
+                    let c_list = document.getElementsByClassName('c_list')[0];
+                    c_list.insertAdjacentHTML("beforeend",li)
+                })
+                total_();
+            }
+        }
+                document.addEventListener('click',function(e){
+                let lists =JSON.parse(sessionStorage.getItem('lists'));
+                // 移除
+                if(e.target.classList.contains('remove')){
+                    let con = confirm('移除?')
+                    if(con){
+                        let item_id = e.target.closest('li').getAttribute('data-id');
+                            
+                        let new_list = [];
+                        lists.forEach(function(item,i){
+                            if(item_id != item.item_id){
+                                new_list.push(item)
+                            };
+                        });
+                        sessionStorage.setItem('lists',JSON.stringify(new_list));
+    
+                        setTimeout(function(){
+                            e.target.closest('li').remove();
+                        },500)
+                    };
+                    change();
+                };
+
+                    
+                let c_btn = e.target.closest('.c_btn');
+                let many = c_btn.querySelector('input');
+                    
+                // 判斷按鈕
+                    
+                if(e.target.classList.contains('plus')){
+                    many.value++;
+                }else if(e.target.classList.contains('minus')){
+                    many.value -=1;
+                }
+                    
+                // 改數量
+                    
+                if(many.value < 1){
+                    many.value = 1;
+                }
+                // 印價格
+                    
+                let show = e.target.closest('li').lastElementChild.querySelector('p');
+                let get;
+                for(let i = 0; i < lists.length; i++){
+                    let item_id = e.target.closest('li').getAttribute('data-id');
+                    
+                    if(item_id == lists[i].item_id){
+                        get = lists[i].price;
+                    }
+                }
+                let price =''+ get * many.value;
+                // console.log(price.length);
+                show.setAttribute('data-price',price); //total
+                // 價格千分位
+                price = thousandths(price);
+
+                show.innerText=`NT$ ${price}`;
+                // total
+                total_()
+                    
+            })
+                // 鍵盤改數量
+                document.addEventListener('keyup',function(e){
+                    let many = e.target;
+                    let show = e.target.closest('li').lastElementChild.querySelector('p');
+                    let lists =JSON.parse(sessionStorage.getItem('lists'));
+                    let get; //先宣告就能從for裡面帶出來
+                    for(let i = 0; i < lists.length; i++){
+                        let item_id = e.target.closest('li').getAttribute('data-id');
+                        
+                        if(item_id == lists[i].item_id){
+                            get = lists[i].price;
+                        }
+                    }
+                    if(many.value < 1){
+                        many.value = 1;
+                    }
+
+                    let price =''+ get * many.value;
+                    show.setAttribute('data-price',price); //total用
+
+                    // 價格加千分位
+                    price = thousandths(price);
+                    
+                    show.innerText=`NT$ ${price}`
+                    total_();
+                })
+                
+
+                // 價格千分位函數
+                function thousandths(a){
+                        if(a.length>3 && a.length <=6){
+                            a = a.slice(0,-3) +',' +a.slice(-3);
+                        }else if(a.length>6 && a.length<=9){
+                            a = a.slice(0,-6) + ',' + a.slice(-6,-3) + ',' + a.slice(-3);    
+                        }else if(a.length>9){
+                            a = a.slice(0,-9) + ',' +  a.slice(-9,-6) + ',' + a.slice(-6,-3) + ',' + a.slice(-3);
+                        }
+                        return a;
+                    }
+                
+
+                function total_(){
+                        let c_lists = document.querySelector('.c_list').querySelectorAll('li');
+                        let p_total = 0;
+
+                        for(let i = 0; i < c_lists.length; i++){
+                            let total_p = c_lists[i].querySelector('p').getAttribute('data-price'); 
+                            p_total += Number(total_p);
+                            // console.log(p_total);
+                        }
+                        
+                        let plus_total = ''+p_total;
+                        
+                        plus_total = thousandths(plus_total);
+                        
+                        let total = document.querySelector('.total');
+                        total.innerText=`NT$ ${plus_total}`;
+                        }
+                </script>
 </body>
 </html>

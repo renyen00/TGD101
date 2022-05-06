@@ -89,10 +89,15 @@
     background-color: #000;
     color: #fff;
     border: none;
-    width: 40%;
+    width: 45%;
     height: 10%;
     transition: .5s;
     min-width: 80px;
+}
+@media screen and (max-width:1029.98px ){
+    .p_card button{
+        width: 60%;
+    }
 }
 @media screen and (max-width:767.98px ){
     .p_card button{
@@ -101,7 +106,9 @@
     }
 }
 .p_card button:hover{
-    font-size: 18px;
+    
+    font-size: 15px;
+    /* font-weight: bold; */
 }
 /* 換頁按鈕 */
 .p_page{

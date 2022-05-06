@@ -36,7 +36,8 @@
                 <ul>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_1"></a></li>
                     <li><a href="#"><img src="./img/icon_t.svg" alt="" class="t_i_2"></a></li>
-                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"></a></li>
+                    <li><a href="cart.html"><img src="./img/icon_t.svg" alt="" class="t_i_3"><p class="cart_count">0</p></a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -71,33 +72,33 @@
             <div class="p_card">
                 <ul>
                     <li>
-                        <a href="product.html"><img src="./img/com04.png" alt=""><p>紫羅蘭石英<br>NT$ 2,700
+                        <a href="product.html"><img src="./img/com04.png" alt=""><p data-price="2700">紫羅蘭石英<br>NT$ 2,700
                         </p></a>
                         <button>加入購物車</button>                        
                     </li>
                     <li>
-                        <a href="product.html"><img src="./img/com02.png" alt=""><p>卡拉加斯赤鐵原石<br>NT$ 1,990</p></a>
+                        <a href="product.html"><img src="./img/com02.png" alt=""><p data-price="1990">卡拉加斯赤鐵原石<br>NT$ 1,990</p></a>
                         <button>加入購物車</button>
                         
                     </li>
                     <li>
-                        <a href="product.html"><img src="./img/com05.png" alt=""><p>利柏里黑曜石<br>NT$ 19,500</p></a>
+                        <a href="product.html"><img src="./img/com05.png" alt=""><p data-price="19500">利柏里黑曜石<br>NT$ 19,500</p></a>
                         <button>加入購物車</button>
                     </li>
                     <li>
-                        <a href="product.html"><img src="./img/com06.png" alt=""><p>蛇紋大理石<br>NT$ 3,400</p></a>
+                        <a href="product.html"><img src="./img/com06.png" alt=""><p data-price="3400">蛇紋大理石<br>NT$ 3,400</p></a>
                         <button>加入購物車</button>
                     </li>
                     <li>
-                        <a href="product.html"><img src="./img/com03.png" alt=""><p>藍晶雲母原石<br>NT$ 2,980</p></a>
+                        <a href="product.html"><img src="./img/com03.png" alt=""><p data-price="2980">藍晶雲母原石<br>NT$ 2,980</p></a>
                         <button>加入購物車</button>
                     </li>
                     <li>
-                        <a href="product2.html"><img src="./img/jewel.png" alt=""><p>里斯藍寶石<br>NT$ 107,200</p></a>
+                        <a href="product2.html"><img src="./img/jewel.png" alt=""><p data-price="107200">里斯藍寶石<br>NT$ 107,200</p></a>
                         <button>加入購物車</button>
                     </li>
                     <li>
-                        <a href="product2.html"><img src="./img/jewel02.png" alt=""><p>紫紅尖晶石<br>NT$ 12,700</p></a>
+                        <a href="product2.html"><img src="./img/jewel02.png" alt=""><p data-price="12700">紫紅尖晶石<br>NT$ 12,700</p></a>
                         <button>加入購物車</button>
                     </li>
                 </ul>
@@ -189,6 +190,41 @@
             }
             filter.classList.toggle('-on');
         });
+
+        // 丟購物車
+        let item = document.getElementsByClassName('p_card')[0].querySelectorAll('li');
+        for(let i = 0 ; i < item.length;i++){
+            let cart_btn = item[i].querySelector('button');
+            
+            cart_btn.addEventListener('click',function(){
+                let item_name = item[i].querySelector('p').innerText.slice(0,8).replace(/\w/g,'');
+                let item_price = item[i].querySelector('p').getAttribute('data-price');
+                
+                // console.log(item_name);
+                let item_count = 1;
+
+                let item_pic = item[i].querySelector('img').src;
+                // console.log(item_pic);
+                
+    
+                let item_id = Date.now();
+                let list = {
+                    'item_id':item_id,
+                    'name': item_name,
+                    'price': item_price,
+                    'count' : item_count,
+                    'pic': item_pic
+                }
+                let lists = JSON.parse(sessionStorage.getItem('lists'));
+                if(lists){
+                    lists.unshift(list);
+                }else{
+                    lists = [list];
+                }
+                sessionStorage.setItem('lists',JSON.stringify(lists));
+                change();
+            });
+        }
     </script>
 </body>
 </html>
