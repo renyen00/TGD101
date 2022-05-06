@@ -114,11 +114,12 @@
 /* 列表 */
 .cardlist{
     margin: 20px auto ;
+    overflow: hidden;
 }
 
 .cardlist ul{
     display: flex;
-    overflow: hidden;
+    position: relative;
 }
 
 .cardlist li{
@@ -218,4 +219,28 @@
     .wra_btn ul li a{
         width: 240px;
     }
+}
+
+
+
+/* 額外 */
+/* circle button */
+#contentButton{
+	text-align: center;
+
+	width: 15%;
+	height: 50px;
+    margin: 0 auto;
+}
+#contentButton li{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #ddd;
+
+	display: inline-block;
+	margin: 5px;
+}
+#contentButton li.clickMe{
+	background: #888;
 }

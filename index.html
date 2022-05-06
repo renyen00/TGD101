@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.6.0.js"></script>
     
 </head>
 <body>
@@ -67,8 +68,8 @@
             </div>
         </article>
         <!-- 列表 -->
-        <div class="cardlist">
-            <ul>
+        <div class="cardlist" id="sliderBoard">
+            <ul id="content">
                 <li>
                     <a href="product.html">
                         <img src="./img/com01.jpg" alt="">
@@ -104,6 +105,22 @@
                         
                     </a>
                 </li>
+                <li>
+                    <a href="product.html">
+                        <img src="./img/com01.jpg" alt="">
+                        <p>紫羅蘭石英<br>NT$ 2,700</p>
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="product.html">
+                        <img src="./img/com06.jpg" alt="">
+                        <p>蛇紋大理石<br>NT$ 3,400</p>
+                        
+                    </a>
+                </li>
+            </ul>
+            <ul id="contentButton">
             </ul>
         </div>
         <!-- 圖片連結 -->
@@ -194,5 +211,47 @@
 
     </footer>
     <script src="./js/index.js"></script>
+    <script>
+        $(function () {
+            let divWidth = $('#sliderBoard img').width();
+            let imgCount = $('#content li').length;  
+    
+            for(let i = 0; i < imgCount; i++){
+                $('#contentButton').append('<li></li>')
+            }
+            $('#contentButton li:nth-child(1)').addClass('clickMe')
+    
+            $('#content').width(divWidth * imgCount)
+            $('#content li').width(divWidth)
+    
+            let index;
+            $('#contentButton li').click(function(){
+                // alert($(this).index())
+                index = $(this).index()
+    
+                $('#content').animate({
+                    left: divWidth * index * -1,
+                })
+    
+                $(this).addClass('clickMe')
+                $('#contentButton li').not(this).removeClass('clickMe')
+            })
+            
+            setInterval(slider,2000)
+            index = 0;
+            function slider(){
+                ++index;
+                let val = index % imgCount; 
+                
+                $('#content').animate({
+                    left:divWidth / 2 * val * -1,
+                })
+                
+                $('#contentButton li').removeClass('clickMe')
+                $('#contentButton').find(`li:nth-child(${val+1})`).addClass('clickMe')
+            }
+            
+        });
+        </script>
 </body>
 </html>

@@ -123,6 +123,7 @@ header .icon a{
     line-height: 18px;
     text-align: center;
     border-radius: 50%;
+    display: none;
 }
 
 @media screen and (max-width:767.98px ) {

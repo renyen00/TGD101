@@ -33,13 +33,14 @@ document.addEventListener('DOMContentLoaded',function(){
 
 function change(){
     let lists =JSON.parse(sessionStorage.getItem('lists'));
-    cart_count.innerText = lists.length;  
     if (lists){
+        cart_count.innerText = lists.length;  
         // console.log(cart_count.innerText);
-        if(cart_count.innerText == 0){
-            cart_count.style.display = 'none';
-        }else{
+        if(cart_count.innerText != 0){
             cart_count.style.display = 'block';
+        }else{
+            cart_count.style.display = 'none';
+
         }
          
     }

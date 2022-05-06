@@ -133,7 +133,14 @@ iframe{
 
 }
 @media screen and (max-width:414.98px ){
+    .place{
+        width: 90%;
+    }
     .place_p p{
         font-size: 14px;
+    }
+    .place_in li{
+        margin: 0 2px;
+        background-position: center;
     }
 }

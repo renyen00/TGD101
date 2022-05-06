@@ -149,3 +149,10 @@ hgroup span:hover{
 div.jumpon{
     display: block;
 }
+
+@media screen and (max-width:414.98px){
+
+    .news_jump{
+        margin-top: 120px;
+    }
+}
