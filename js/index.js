@@ -45,3 +45,14 @@ function change(){
          
     }
 }
+
+// 按鈕
+let b_to_t = document.getElementsByClassName('b_to_t')[0];
+
+addEventListener('scroll',function(){
+    (scrollY > 150 ?  b_to_t.style.display ='block': b_to_t.style.display ='none')
+})
+
+b_to_t.addEventListener('click',function(){
+    $('html').animate({scrollTop:0},500);
+})
