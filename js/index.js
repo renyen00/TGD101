@@ -55,4 +55,7 @@ addEventListener('scroll',function(){
 
 b_to_t.addEventListener('click',function(){
     $('html').animate({scrollTop:0},500);
+    
+    e.stopPropagation();
+
 })
