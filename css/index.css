@@ -203,6 +203,7 @@
 .pic3:hover{
     background-image: url(../img/index_img3.jpg);
 }
+
 .load{display: none;}
 @media screen and (max-width:900.98px){
     .wra_btn{
