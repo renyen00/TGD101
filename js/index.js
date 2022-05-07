@@ -53,9 +53,8 @@ addEventListener('scroll',function(){
     (scrollY > 150 ?  b_to_t.style.display ='block': b_to_t.style.display ='none')
 })
 
-b_to_t.addEventListener('click',function(){
+b_to_t.addEventListener('click',function(e){
     $('html').animate({scrollTop:0},500);
+    e.preventDefault();
     
-    e.stopPropagation();
-
 })
