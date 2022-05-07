@@ -81,7 +81,8 @@
                             <img src="./img/news_2.jpg" alt="">
                             <div>
                                 <p>4/1神秘贈品特別活動</p>
-                                <p>數量有限，送完為止。 </p>
+                                <p>響應愚人節，凡於4/1來店即贈送精美石頭造型巧克力一份。 數量有限，送完為止。
+                                </p>
                                 <span>more</span>
                                                                    
                             </div>
@@ -186,16 +187,23 @@
 
     <script src="./js/index.js"></script>
     <script>
+        // 彈窗
         let jump = document.getElementsByClassName('jump')[0];
         let abtn = document.getElementsByClassName('news_right')[0].querySelectorAll('a');
         
+        let c;//計數
         for(let i = 0;i < abtn.length; i++){
             abtn[i].addEventListener('click',function(e){
                 e.preventDefault();
                 jump.classList.add('jumpon');
+                c = i;
+                change_content();
             })
         }
         
+
+
+        //  關閉
         document.getElementsByClassName('close')[0].onclick = close;
         document.getElementsByClassName('close')[1].onclick = close;
 
@@ -227,6 +235,59 @@
             filter.classList.toggle('-on');
         });
 
+        //彈窗內容 
+        
+        let switch_btn = document.getElementsByClassName('stop')[1].querySelectorAll('button');
+         
+        
+        for(let i = 0;i < switch_btn.length; i++){
+            
+            
+            switch_btn[i].addEventListener('click',function(){
+                if(i == 0){
+                    c -= 1;
+                    
+                    change_content();     
+                }else{
+                    c++;
+                    change_content();
+                    
+                }
+            })
+            
+        }
+        
+
+        function change_content(){
+            let simp = document.getElementsByClassName('news_jump')[0];
+            let jump_img = simp.querySelector('img');
+            let jump_h2 = simp.querySelector('h2');
+            let jump_cont = simp.lastElementChild;
+            let jump_date = simp.querySelector('p');
+
+            let img = abtn[c].querySelector('img').src;
+                let title = abtn[c].querySelector('p').innerText;
+                let cont = abtn[c].getElementsByTagName('p')[1].innerText;
+
+                jump_img.src = img;
+                jump_h2.innerText = title;
+                jump_cont.innerText = cont +` 
+                
+                
+                ${cont} , ${cont} , ${cont} , ${cont} , ${cont} , ${cont}`;
+
+                if( c == 0 ){
+                    switch_btn[0].disabled = true;
+                }else{
+                    switch_btn[0].disabled = false;
+                }
+                    
+                if( c == abtn.length - 1){
+                    switch_btn[1].disabled = true;
+                }else{
+                    switch_btn[1].disabled = false;
+                }
+        }
     </script>
 </body>
 <!-- </html> -->

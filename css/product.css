@@ -300,6 +300,12 @@
 	height: 50px;
     margin: 0 auto;
 }
+@media screen and (max-width:767.98px){
+    
+    #contentButton{
+        width: 100%;
+    }
+}
 #contentButton li{
 	width: 10px;
 	height: 10px;
