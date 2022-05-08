@@ -73,33 +73,33 @@
             </div>
             <div class="p_card">
                 <ul>
-                    <li>
+                    <li data-type="origi">
                         <a href="product.html"><img src="./img/com04.png" alt=""><p data-price="2700">紫羅蘭石英<br>NT$ 2,700
                         </p></a>
                         <button>加入購物車</button>                        
                     </li>
-                    <li>
+                    <li data-type="ore">
                         <a href="product.html"><img src="./img/com02.png" alt=""><p data-price="1990">卡拉加斯赤鐵原石<br>NT$ 1,990</p></a>
                         <button>加入購物車</button>
                         
                     </li>
-                    <li>
+                    <li data-type="origi">
                         <a href="product.html"><img src="./img/com05.png" alt=""><p data-price="19500">利柏里黑曜石<br>NT$ 19,500</p></a>
                         <button>加入購物車</button>
                     </li>
-                    <li>
+                    <li data-type="ore">
                         <a href="product.html"><img src="./img/com06.png" alt=""><p data-price="3400">蛇紋大理石<br>NT$ 3,400</p></a>
                         <button>加入購物車</button>
                     </li>
-                    <li>
+                    <li data-type="origi">
                         <a href="product.html"><img src="./img/com03.png" alt=""><p data-price="2980">藍晶雲母原石<br>NT$ 2,980</p></a>
                         <button>加入購物車</button>
                     </li>
-                    <li>
+                    <li data-type="jewel">
                         <a href="product2.html"><img src="./img/jewel.png" alt=""><p data-price="107200">里斯藍寶石<br>NT$ 107,200</p></a>
                         <button>加入購物車</button>
                     </li>
-                    <li>
+                    <li data-type="jewel">
                         <a href="product2.html"><img src="./img/jewel02.png" alt=""><p data-price="12700">紫紅尖晶石<br>NT$ 12,700</p></a>
                         <button>加入購物車</button>
                     </li>
@@ -188,7 +188,7 @@
             if(filter.classList.contains('-on')){
                 filter.style.height = '0';
             }else{
-                filter.style.height = '52px';
+                filter.style.height = '85px';
             }
             filter.classList.toggle('-on');
         });
@@ -226,6 +226,41 @@
                 sessionStorage.setItem('lists',JSON.stringify(lists));
                 change();
             });
+        }
+        // 切換種類
+        let type_card= document.getElementsByClassName('p_card')[0].querySelectorAll('li');
+        
+        let type_btn = document.getElementsByClassName('p_main')[0].querySelector('nav').querySelectorAll('button');
+
+        for(let i = 0;i < type_btn.length ; i++){
+
+            type_btn[i].addEventListener('click',function(){
+                if(i == 0){
+                    for(let i = 0;i < type_card.length ; i++){
+                        let check =type_card[i].getAttribute('data-type');
+                        type_card[i].classList.remove('hide');
+                        if(check != 'ore'){
+                            type_card[i].classList.add('hide');
+                        }
+                    }
+                }else if(i == 1){
+                    for(let i = 0;i < type_card.length ; i++){
+                        let check =type_card[i].getAttribute('data-type');
+                        type_card[i].classList.remove('hide');
+                        if(check != 'origi'){
+                            type_card[i].classList.add('hide');
+                        }
+                    }
+                }else{
+                    for(let i = 0;i < type_card.length ; i++){
+                        let check =type_card[i].getAttribute('data-type');
+                        type_card[i].classList.remove('hide');
+                        if(check != 'jewel'){
+                            type_card[i].classList.add('hide');
+                        }
+                    }
+                }
+            })
         }
     </script>
 </body>
