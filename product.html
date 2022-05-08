@@ -225,6 +225,9 @@
             let item_pic = document.getElementsByClassName('p_c_left')[0].querySelector('img').src;
             // console.log(item_pic);
             
+            // 放完回1
+            let re = document.getElementsByClassName('c_btn')[0].getElementsByTagName('input')[0];
+            re.value = 1;
 
             let item_id = Date.now();
             let list = {
