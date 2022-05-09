@@ -4,6 +4,7 @@
 body{
     background-color: #fff;
     font-family: 'Noto Sans TC', sans-serif;
+    margin-top: 90px;
 }
 
 li{
@@ -33,6 +34,11 @@ header{
     /* 固定 */
     /* width: 1366px; */
     /* margin: 0 auto; */
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    top: 0;
+    z-index: 5;
     /* 固定 */
 }
 
@@ -127,16 +133,6 @@ header .icon a{
 }
 
 @media screen and (max-width:767.98px ) {
-    /* .logo{
-        max-width: 268px;
-    } */
-    header{
-        position: fixed;
-        background-color: #fff;
-        width: 100%;
-        top: 0;
-        z-index: 5;
-    }
     
     .bars{
         display: inline-block;
