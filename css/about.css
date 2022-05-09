@@ -98,7 +98,16 @@
 .place_in .p_now p{
     background-color: transparent;
 }
+@media screen and (max-width:414.98px){
+    .place_in{
+        flex-direction:column;
+        height: 400px;
+    }
+    .place_in li{
+        /* height: 100px; */
+    }
 
+}
 
 .place_p{
     display: none; 

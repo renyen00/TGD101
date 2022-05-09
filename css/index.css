@@ -220,6 +220,23 @@
     .wra_btn ul li a{
         width: 240px;
     }
+    .piclink p{
+        opacity: 1;
+    transform: translateY(45%);
+    }
+
+    .pic1{
+        background-image: url(../img/index_img1.jpg);
+    }
+    
+    .pic2{
+        background-image: url(../img/index_img2.jpg);
+    }
+    .pic3{
+
+        background-image: url(../img/index_img3.jpg);
+    }
+    
 }
 
 

@@ -234,6 +234,26 @@
                     many.value++;
                 }else if(e.target.classList.contains('minus')){
                     many.value -=1;
+                    if(many.value == 0){
+                        let con = confirm('移除?')
+                        if(con){
+                            let item_id = e.target.closest('li').getAttribute('data-id');
+                                
+                            let new_list = [];
+                            lists.forEach(function(item,i){
+                                if(item_id != item.item_id){
+                                    new_list.push(item)
+                                };
+                            });
+                            sessionStorage.setItem('lists',JSON.stringify(new_list));
+        
+                            setTimeout(function(){
+                                e.target.closest('li').remove();
+                                total_();
+                            },500)
+                        };
+                        change();
+                    }
                 }
                     
                 // 改數量

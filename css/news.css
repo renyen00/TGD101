@@ -53,8 +53,15 @@
     .news_right>ul>li>a>img{
         width: 100%;
     }
-
+    .news_right>ul>li>a p:nth-child(2){
+        width: calc(100% - 120px);
+        margin-left: 10px;
+    }
+    .news_right li>a>div{
+        width: 100%;
+    }
 }
+
 /* 消息內頁 */
 
 .jump{

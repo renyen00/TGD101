@@ -426,3 +426,9 @@ footer .icon li{
 .b_to_t:hover{
     font-size: 24px;
 }
+
+@media screen and (max-width:414.98px ){
+    .b_to_t{
+        bottom:20px
+    }
+}
