@@ -244,10 +244,18 @@
                 ++index;
                 let val = index % imgCount; 
                 
-                $('#content').animate({
-                    left:divWidth / 2 * val * -1,
-                })
-                
+                let now_width = window.innerWidth
+
+                if(now_width <= 414.98){
+                    $('#content').animate({
+                        left:divWidth * val * -1,
+                    })
+                }else{
+                    $('#content').animate({
+                        left:(divWidth / 2 * val + 10) * -1 ,
+                    })
+                }
+                console.log(window.innerWidth);
                 $('#contentButton li').removeClass('clickMe')
                 $('#contentButton').find(`li:nth-child(${val+1})`).addClass('clickMe')
             }
