@@ -186,7 +186,7 @@
                             <h4>${item.name}</h4>
                             <div class="c_btn">
                                 <button class='minus'> - </button>
-                                <input class='many' type="text" onkeyup = "value=value.replace(/[^0123456789]/g,'')" placeholder="數量" value=${item.count} >
+                                <input class='many' type="text" onkeyup = "value=value.replace(/\\D/g,'')" placeholder="數量" value=${item.count} >
                                 <button class='plus'>+</button>
                                 </div>
                         <div>
